@@ -1,16 +1,16 @@
-var express = require('express')
-var passport = require('passport')
-var util = require('util')
-var session = require('express-session')
-var bodyParser = require('body-parser')
-var methodOverride = require('method-override')
-var BungieStrategy = require('passport-bungie').Strategy
-var partials = require('express-partials')
+const express = require('express')
+const passport = require('passport')
+const util = require('util')
+const session = require('express-session')
+const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
+const BungieStrategy = require('passport-bungie').Strategy
+const partials = require('express-partials')
 
-var BUNGIE_CLIENT_ID = '--insert-bungie-client-id-here--'
-var BUNGIE_CLIENT_SECRET = '--insert-bungie-client-secret-here--'
-var BUNGIE_APIKEY = '--insert-bungie-api-key-here--'
-var CALLBACK_URI = '--insert-callback-uri-here--'
+// var BUNGIE_CLIENT_ID = '--insert-bungie-client-id-here--'
+// var BUNGIE_CLIENT_SECRET = '--insert-bungie-client-secret-here--'
+// var BUNGIE_APIKEY = '--insert-bungie-api-key-here--'
+// var CALLBACK_URI = '--insert-callback-uri-here--'
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -105,9 +105,11 @@ app.get(
    }
 )
 
-app.get('/logout', function (req, res) {
-   req.logout()
-   res.redirect('/')
+app.get('/logout', function (req, res, next) {
+   req.logout(function (err) {
+      if (err) return next(err)
+      res.redirect('/')
+   })
 })
 
 app.listen(3000)

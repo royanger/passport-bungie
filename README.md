@@ -1,7 +1,9 @@
 # Passport-Bungie
 
 [Passport](http://passportjs.org/) strategy for authenticating with [Bungie](https://www.bungie.net/)
-using the OAuth 2.0 API.
+using the OAuth 2.0 API. This package was adopted from Fred Chien's
+excellent [passport-github2](https://github.com/cfsghost/passport-github)
+Strategy.
 
 This module lets you authenticate using Bungie in your Node.js applications.
 By plugging into Passport, Bungie authentication can be easily and
