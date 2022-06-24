@@ -1,0 +1,45 @@
+{
+   "name": "passport-bungie",
+   "version": "0.0.1",
+   "description": "Bungie authentication strategy for Passport.",
+   "keywords": [
+      "passport",
+      "bungie",
+      "auth",
+      "authn",
+      "authentication",
+      "identity"
+   ],
+   "author": {
+      "name": "Roy Anger",
+      "email": "royanger@gmail.com",
+      "url": "http://www.royanger.dev"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/royanger/passport-bungie"
+   },
+   "bugs": {
+      "url": "https://github.com/royanger/passport-bungie/issues"
+   },
+   "licenses": [
+      {
+         "type": "MIT",
+         "url": "http://www.opensource.org/licenses/MIT"
+      }
+   ],
+   "main": "./lib",
+   "dependencies": {
+      "passport-oauth2": "1.x.x"
+   },
+   "devDependencies": {
+      "mocha": "1.x.x",
+      "chai": "1.x.x"
+   },
+   "engines": {
+      "node": ">= 0.8.0"
+   },
+   "scripts": {
+      "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js"
+   }
+}
