@@ -46,11 +46,11 @@ passport.use(
       },
       function (accessToken, refreshToken, profile, done) {
          User.findOrCreate({ bungie: memberhipId }, function (err, user) {
-            return done(err, user)
-         })
+            return done(err, user);
+         });
       }
    )
-)
+);
 ```
 
 #### Authenticate Requests
@@ -62,16 +62,16 @@ For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
 ```javascript
-app.get('/auth/bungie', passport.authenticate('bungie'))
+app.get('/auth/bungie', passport.authenticate('bungie'));
 
 app.get(
    '/auth/bungie/callback',
    passport.authenticate('bungie', { failureRedirect: '/login' }),
    function (req, res) {
       // Successful authentication, redirect home.
-      res.redirect('/')
+      res.redirect('/');
    }
-)
+);
 ```
 
 ## Examples
